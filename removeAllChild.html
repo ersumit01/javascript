@@ -1,0 +1,27 @@
+<!DOCTYPE>
+<html>
+  <head>
+     <title>Search array </title>
+  </head>
+  <body >
+    <script>
+      function removeChild1 (){
+        var theBody = document.getElementsByTagName('body')[0]
+        while(theBody.firstChild){
+         alert(theBody.firstChild);
+          theBody.removeChild(theBody.firstChild);
+          alert(theBody.firstChild);
+        }
+      }
+    </script>
+
+    <div id="result" >
+      <div id="slice">
+         This slice
+       </div>
+ <div>Square</div>
+    </div>
+
+    <div onclick="removeChild1()">Remove</div>
+  </body>
+</html>

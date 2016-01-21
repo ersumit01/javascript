@@ -1,0 +1,49 @@
+<!DOCTYPE>
+<html>
+  <head>
+     <title>Search array </title>
+  </head>
+  <body onload="load()">
+    <script>
+      var animals = ["rabbits","loins","elephant", "rabbits", "snake", "monkey", "rabbits"];
+      var result = [];
+      var startSearchAt = 0;
+      do
+      {
+
+         var foundAt = animals.indexOf("rabbits", startSearchAt);
+         if(foundAt > -1){
+           result.push(foundAt);
+           startSearchAt = foundAt + 1;
+         }
+
+      }while(foundAt != -1);
+
+      function load() {
+        var text = "Rabbits found :"
+        for(item of result){
+        text += " "+item
+      }
+      document.getElementById('result').innerText =  text;
+    }
+    function squareArray(){
+      var numbers = [1,2,3,4];
+      numbers.forEach(function(elem,idx,arr){
+        arr[idx] = elem*elem;
+      });
+      alert(numbers);
+    }
+    function mapArray(){
+      var numbers = [1,2,3,4];
+      var square = function (ele){return ele*ele};
+      var results = numbers.map(square);
+      alert(results);
+    }
+    </script>
+
+    <div id="result" ></div>
+    <div id="slice"></div>
+    <div onclick="squareArray()">Square</div>
+    <div onclick="mapArray()">Map</div>
+  </body>
+</html>
